@@ -1,0 +1,1 @@
+Nodo = Struct.new(:valor, :siguiente, :anterior)
