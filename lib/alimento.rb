@@ -12,3 +12,7 @@ end
 class Lista
 	
 end
+
+class GrupoAlimentos < Alimento
+
+end
