@@ -124,5 +124,8 @@ RSpec.describe GrupoAlimentos do
     it "to_s funciona correctamente" do
       expect(@cerdo.to_s).to eq("Grupo: Carnes\nAlimento: Cerdo\n\tProteinas: 21.5\n\tGlucidos: 0.0\n\tLipidos: 6.3")
     end
+    it "Se obtiene el valor energetico correctamente" do
+      expect(@cerdo.kcal).to eq(142.7)
+    end
   end
 end
