@@ -80,5 +80,10 @@ RSpec.describe Lista do
       expect(@lista.head.valor).to eq(2)
       expect(@lista.head.anterior).to eq(nil)
     end
+    it "Extraer nodo por la cola" do
+      @lista.tail_out
+      expect(@lista.tail.valor).to eq(1)
+      expect(@lista.tail.siguiente).to eq(nil)
+    end
   end
 end
