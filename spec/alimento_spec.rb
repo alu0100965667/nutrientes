@@ -34,3 +34,7 @@ RSpec.describe Alimento do
   end
   
 end
+
+RSpec.describe Nodo do
+  
+end
