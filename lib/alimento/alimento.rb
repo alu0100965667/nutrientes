@@ -24,4 +24,10 @@ class GrupoAlimentos < Alimento
 		super(nombre, proteinas, glucidos, lipidos)
 		@grupo = grupo
 	end
+	
+	def to_s
+		s = "Grupo: #{grupo}\n"
+		s << super.to_s
+		s
+	end
 end
