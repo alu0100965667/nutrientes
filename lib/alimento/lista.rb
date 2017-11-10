@@ -25,4 +25,11 @@ class Lista
 			aux.anterior = @head
 		end
 	end
+	
+	def head_out
+		aux = @head.siguiente
+		@head.siguiente = nil
+		@head = aux
+		@head.anterior = nil
+	end
 end

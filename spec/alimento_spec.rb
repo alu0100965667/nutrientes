@@ -78,6 +78,7 @@ RSpec.describe Lista do
       @lista.insert(@otro)
       @lista.head_out
       expect(@lista.head.valor).to eq(2)
+      expect(@lista.head.anterior).to eq(nil)
     end
   end
 end
