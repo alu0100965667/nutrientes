@@ -32,4 +32,11 @@ class Lista
 		@head = aux
 		@head.anterior = nil
 	end
+	
+	def tail_out
+		aux = @tail.anterior
+		@tail.anterior = nil
+		@tail = aux
+		@tail.siguiente = nil
+	end
 end
