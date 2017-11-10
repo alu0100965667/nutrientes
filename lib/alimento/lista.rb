@@ -15,4 +15,14 @@ class Lista
 	def tail
 		@tail
 	end
+	
+	def insert(nodo)
+		if(nodo.is_a?Nodo) then
+			aux = @head
+			@head = nodo
+			@head.anterior = nil
+			@head.siguiente = aux
+			aux.anterior = @head
+		end
+	end
 end

@@ -69,7 +69,7 @@ RSpec.describe Lista do
     end
     it "Insertar nodo en la lista" do
       @insert = Nodo.new(2, nil, nil)
-      @lista.insert(@nodo)
+      @lista.insert(@insert)
       expect(@lista.head.siguiente.valor).to eq(1)
       expect(@lista.head.valor).to eq(2)
     end
