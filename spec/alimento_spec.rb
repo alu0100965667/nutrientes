@@ -67,5 +67,11 @@ RSpec.describe Lista do
     it "Existe tail de la lista" do
       expect(@lista).to respond_to(:tail)
     end
+    it "Insertar nodo en la lista" do
+      @insert = Nodo.new(2, nil, nil)
+      @lista.insert(@nodo)
+      expect(@lista.head.siguiente.valor).to eq(1)
+      expect(@lista.head.valor).to eq(2)
+    end
   end
 end
