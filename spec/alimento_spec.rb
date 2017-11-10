@@ -87,3 +87,7 @@ RSpec.describe Lista do
     end
   end
 end
+
+RSpec.describe GrupoAlimentos do
+  
+end
