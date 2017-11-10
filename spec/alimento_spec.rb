@@ -54,5 +54,18 @@ RSpec.describe Nodo do
 end
 
 RSpec.describe Lista do
+  before :all do
+    @head = Nodo.new(1, nil, nil)
+    @tail = Nodo.new(0, nil, nil)
+    @lista = Lista.new(@head, @tail)
+  end
   
+  describe "# Lista" do
+    it "Existe head de la lista" do
+      expect(@lista).to respond_to(:head)
+    end
+    it "Existe tail de la lista" do
+      expect(@lista).to respond_to(:tail)
+    end
+  end
 end
