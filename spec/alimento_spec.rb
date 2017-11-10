@@ -119,4 +119,10 @@ RSpec.describe GrupoAlimentos do
       expect(GrupoAlimentos.superclass).to eq(Alimento)
     end
   end
+  
+  describe "# Métodos" do
+    it "to_s funciona correctamente" do
+      expect(@cerdo.to_s).to eq("Grupo: Carnes\nAlimento: Cerdo\n\tProteinas: 21.5\n\tGlucidos: 0.0\n\tLipidos: 6.3")
+    end
+  end
 end
