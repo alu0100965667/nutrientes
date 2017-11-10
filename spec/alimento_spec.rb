@@ -73,5 +73,11 @@ RSpec.describe Lista do
       expect(@lista.head.siguiente.valor).to eq(1)
       expect(@lista.head.valor).to eq(2)
     end
+    it "Extraer nodo por la cabeza" do
+      @otro = Nodo.new(3, nil, nil)
+      @lista.insert(@otro)
+      @lista.head_out
+      expect(@lista.head.valor).to eq(2)
+    end
   end
 end
