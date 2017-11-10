@@ -89,5 +89,34 @@ RSpec.describe Lista do
 end
 
 RSpec.describe GrupoAlimentos do
+  before :all do
+    @cerdo = GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, "Carnes")
+  end
   
+  describe "# Clase, Tipo de objeto y Jerarquia" do
+    it "El objeto de GrupoAlimentos es de la clase GrupoAlimentos" do
+      expect(@cerdo).to be_an_instance_of(GrupoAlimentos)
+    end
+    it "El objeto de GrupoAlimentos es un Alimento" do
+      expect(@cerdo).to be_a_kind_of(GrupoAlimentos)
+    end
+    it "El objeto de GrupoAlimentos es un Alimento" do
+      expect(@cerdo).to be_a_kind_of(Alimento)
+    end
+    it "El objeto de GrupoAlimentos responde a proteinas" do
+      expect(@cerdo).to respond_to(:proteinas)
+    end
+    it "El objeto de GrupoAlimentos responde a glucidos" do
+      expect(@cerdo).to respond_to(:glucidos)
+    end
+    it "El objeto de GrupoAlimentos responde a lipidos" do
+      expect(@cerdo).to respond_to(:lipidos)
+    end
+    it "El objeto de GrupoAlimentos responde a grupo" do
+      expect(@cerdo).to respond_to(:grupo)
+    end
+    it "La superclase de GrupoAlimentos es Alimento" do
+      expect(GrupoAlimentos.superclass).to eq(Alimento)
+    end
+  end
 end
