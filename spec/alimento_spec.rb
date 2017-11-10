@@ -36,5 +36,19 @@ RSpec.describe Alimento do
 end
 
 RSpec.describe Nodo do
+  before :all do
+    @nodo = Nodo.new(2, nil, nil)
+  end
   
+  describe "# Nodo" do
+    it "Existe el valor de un Nodo" do
+      expect(@nodo).to respond_to(:valor)
+    end
+    it "Existe el siguiente de un Nodo" do
+      expect(@nodo).to respond_to(:siguiente)
+    end
+    it "Existe el anterior de un Nodo" do
+      expect(@nodo).to respond_to(:anterior)
+    end
+  end
 end
