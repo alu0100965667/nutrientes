@@ -52,3 +52,7 @@ RSpec.describe Nodo do
     end
   end
 end
+
+RSpec.describe Lista do
+  
+end
