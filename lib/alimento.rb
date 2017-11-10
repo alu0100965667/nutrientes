@@ -8,3 +8,7 @@ end
 class Nodo
 
 end
+
+class Lista
+	
+end
