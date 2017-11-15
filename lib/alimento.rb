@@ -1,18 +1,6 @@
 require "alimento/alimento"
 require "alimento/lista"
 
-class Alimento
+module Alimento
   # Your code goes here...
-end
-
-class Nodo
-
-end
-
-class Lista
-	
-end
-
-class GrupoAlimentos < Alimento
-
 end

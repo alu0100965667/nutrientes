@@ -1,4 +1,4 @@
-class Alimento
+class Gema
 	attr_reader :nombre, :proteinas, :glucidos, :lipidos
 	
 	def initialize(nombre, proteinas, glucidos, lipidos)
@@ -18,7 +18,7 @@ class Alimento
 	
 end
 
-class GrupoAlimentos < Alimento
+class GrupoAlimentos < Gema
 	attr_reader :grupo
 	def initialize(nombre, proteinas, glucidos, lipidos, grupo)
 		super(nombre, proteinas, glucidos, lipidos)

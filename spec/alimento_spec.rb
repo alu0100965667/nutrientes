@@ -1,9 +1,9 @@
 require "spec_helper"
 
-RSpec.describe Alimento do
+RSpec.describe Gema do
   
   before :all do
-    @papas = Alimento.new("Papas", 2.0, 15.4, 0.1)
+    @papas = Gema.new("Papas", 2.0, 15.4, 0.1)
   end
   
   describe "# almacenamiento de variables" do
@@ -101,7 +101,7 @@ RSpec.describe GrupoAlimentos do
       expect(@cerdo).to be_a_kind_of(GrupoAlimentos)
     end
     it "El objeto de GrupoAlimentos es un Alimento" do
-      expect(@cerdo).to be_a_kind_of(Alimento)
+      expect(@cerdo).to be_a_kind_of(Gema)
     end
     it "El objeto de GrupoAlimentos responde a proteinas" do
       expect(@cerdo).to respond_to(:proteinas)
@@ -116,7 +116,7 @@ RSpec.describe GrupoAlimentos do
       expect(@cerdo).to respond_to(:grupo)
     end
     it "La superclase de GrupoAlimentos es Alimento" do
-      expect(GrupoAlimentos.superclass).to eq(Alimento)
+      expect(GrupoAlimentos.superclass).to eq(Gema)
     end
   end
   
