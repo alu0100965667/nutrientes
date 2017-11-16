@@ -1,8 +1,10 @@
-class Gema
+module Alimento
+
+class Alimento
 	include Comparable
 	attr_reader :nombre, :proteinas, :glucidos, :lipidos
 	def <=>(other)
-		if other.kind_of?Gema
+		if other.kind_of?Alimento
 			kcal <=> other.kcal
 		end
 	end
@@ -23,7 +25,7 @@ class Gema
 	
 end
 
-class GrupoAlimentos < Gema
+class GrupoAlimentos < Alimento
 	attr_reader :grupo
 	def initialize(nombre, proteinas, glucidos, lipidos, grupo)
 		super(nombre, proteinas, glucidos, lipidos)
@@ -35,4 +37,6 @@ class GrupoAlimentos < Gema
 		s << super.to_s
 		s
 	end
+end
+
 end

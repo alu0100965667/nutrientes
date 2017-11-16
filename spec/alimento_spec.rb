@@ -1,9 +1,9 @@
 require "spec_helper"
 
-RSpec.describe Gema do
+RSpec.describe Alimento::Alimento do
   
   before :all do
-    @papas = Gema.new("Papas", 2.0, 15.4, 0.1)
+    @papas = Alimento::Alimento.new("Papas", 2.0, 15.4, 0.1)
   end
   
   describe "# almacenamiento de variables" do
@@ -35,9 +35,9 @@ RSpec.describe Gema do
   
 end
 
-RSpec.describe Nodo do
+RSpec.describe Alimento::Nodo do
   before :all do
-    @nodo = Nodo.new(2, nil, nil)
+    @nodo = Alimento::Nodo.new(2, nil, nil)
   end
   
   describe "# Nodo" do
@@ -53,11 +53,11 @@ RSpec.describe Nodo do
   end
 end
 
-RSpec.describe Lista do
+RSpec.describe Alimento::Lista do
   before :all do
-    @head = Nodo.new(1, nil, nil)
-    @tail = Nodo.new(0, nil, nil)
-    @lista = Lista.new(@head, @tail)
+    @head = Alimento::Nodo.new(1, nil, nil)
+    @tail = Alimento::Nodo.new(0, nil, nil)
+    @lista = Alimento::Lista.new(@head, @tail)
   end
   
   describe "# Lista" do
@@ -68,13 +68,13 @@ RSpec.describe Lista do
       expect(@lista).to respond_to(:tail)
     end
     it "Insertar nodo en la lista" do
-      @insert = Nodo.new(2, nil, nil)
+      @insert = Alimento::Nodo.new(2, nil, nil)
       @lista.insert(@insert)
       expect(@lista.head.siguiente.valor).to eq(1)
       expect(@lista.head.valor).to eq(2)
     end
     it "Extraer nodo por la cabeza" do
-      @otro = Nodo.new(3, nil, nil)
+      @otro = Alimento::Nodo.new(3, nil, nil)
       @lista.insert(@otro)
       @lista.head_out
       expect(@lista.head.valor).to eq(2)
@@ -88,20 +88,20 @@ RSpec.describe Lista do
   end
 end
 
-RSpec.describe GrupoAlimentos do
+RSpec.describe Alimento::GrupoAlimentos do
   before :all do
-    @cerdo = GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, "Carnes")
+    @cerdo = Alimento::GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, "Carnes")
   end
   
   describe "# Clase, Tipo de objeto y Jerarquia" do
     it "El objeto de GrupoAlimentos es de la clase GrupoAlimentos" do
-      expect(@cerdo).to be_an_instance_of(GrupoAlimentos)
+      expect(@cerdo).to be_an_instance_of(Alimento::GrupoAlimentos)
     end
     it "El objeto de GrupoAlimentos es un Alimento" do
-      expect(@cerdo).to be_a_kind_of(GrupoAlimentos)
+      expect(@cerdo).to be_a_kind_of(Alimento::GrupoAlimentos)
     end
     it "El objeto de GrupoAlimentos es un Alimento" do
-      expect(@cerdo).to be_a_kind_of(Gema)
+      expect(@cerdo).to be_a_kind_of(Alimento::Alimento)
     end
     it "El objeto de GrupoAlimentos responde a proteinas" do
       expect(@cerdo).to respond_to(:proteinas)
@@ -116,7 +116,7 @@ RSpec.describe GrupoAlimentos do
       expect(@cerdo).to respond_to(:grupo)
     end
     it "La superclase de GrupoAlimentos es Alimento" do
-      expect(GrupoAlimentos.superclass).to eq(Gema)
+      expect(Alimento::GrupoAlimentos.superclass).to eq(Alimento::Alimento)
     end
   end
   
@@ -130,13 +130,13 @@ RSpec.describe GrupoAlimentos do
   end
 end
 
-RSpec.describe Gema do
+RSpec.describe Alimento::Alimento do
   
   before :all do
-    @papas = Gema.new("Papas", 2.0, 15.4, 0.1)
-    @papasgrupo = GrupoAlimentos.new("Papas", 2.0, 15.4, 0.1, "Hidratos")
-    @cerdo = GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, "Carnes")
-    @huevofrito = Gema.new("Huevo frito", 14.1, 0.0, 19.5)
+    @papas = Alimento::Alimento.new("Papas", 2.0, 15.4, 0.1)
+    @papasgrupo = Alimento::GrupoAlimentos.new("Papas", 2.0, 15.4, 0.1, "Hidratos")
+    @cerdo = Alimento::GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, "Carnes")
+    @huevofrito = Alimento::Alimento.new("Huevo frito", 14.1, 0.0, 19.5)
   end
   
   describe "# Módulo Comparable en Gema" do
@@ -166,12 +166,12 @@ RSpec.describe Gema do
   
 end
 
-RSpec.describe Lista do
+RSpec.describe Alimento::Lista do
   
   before :all do
-    @l1 = Lista.new(Nodo.new(1, nil, nil), Nodo.new(0, nil, nil))
-    @l1.insert(Nodo.new(2, nil, nil))
-    @l1.insert(Nodo.new(3, nil, nil))
+    @l1 = Alimento::Lista.new(Alimento::Nodo.new(1, nil, nil), Alimento::Nodo.new(0, nil, nil))
+    @l1.insert(Alimento::Nodo.new(2, nil, nil))
+    @l1.insert(Alimento::Nodo.new(3, nil, nil))
   end
   
   describe "# Módulo Enumerable en Lista" do

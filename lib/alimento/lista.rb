@@ -1,3 +1,5 @@
+module Alimento
+
 Nodo = Struct.new(:valor, :siguiente, :anterior)
 
 class Lista
@@ -48,4 +50,6 @@ class Lista
 			tmp = tmp.siguiente
 		end
 	end
+end
+
 end
