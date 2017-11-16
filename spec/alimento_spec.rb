@@ -129,3 +129,37 @@ RSpec.describe GrupoAlimentos do
     end
   end
 end
+
+RSpec.describe Gema do
+  
+  before :all do
+    @papas = Gema.new("Papas", 2.0, 15.4, 0.1)
+    @papasgrupo = GrupoAlimentos.new("Papas", 2.0, 15.4, 0.1, "Hidratos")
+    @cerdo = GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, "Carnes")
+    @huevofrito = Gema.new("Huevo frito", 14.1, 0.0, 19.5)
+  end
+  
+  describe "# Módulo Comparable en Gema" do
+    it "obj < other" do
+      expect(@papas<@cerdo).to eq(true)
+    end
+    it "obj <= other" do
+      expect(@papas<=@cerdo).to eq(true)
+    end
+    it "obj == other" do
+      expect(@papas==@papasgrupo).to eq(true)
+    end
+    it "obj > other" do
+      expect(@papas>@cerdo).to eq(false)
+    end
+    it "obj >= other" do
+      expect(@papas>=@cerdo).to eq(false)
+    end
+    it "between?(min, max)" do
+      expect(@cerdo.between?(@papas, @huevofrito)).to eq(true)
+      expect(@papas.between?(@cerdo, @huevofrito)).to eq(false)
+    end
+  end
+  
+end
+
