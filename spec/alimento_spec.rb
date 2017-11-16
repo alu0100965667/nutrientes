@@ -166,3 +166,45 @@ RSpec.describe Gema do
   
 end
 
+RSpec.describe Lista do
+  
+  before :all do
+    @l1 = Lista.new(Nodo.new(1, nil, nil), Nodo.new(0, nil, nil))
+    @l1.insert(Nodo.new(2, nil, nil))
+    @l1.insert(Nodo.new(3, nil, nil))
+  end
+  
+  describe "# Módulo Enumerable en Lista" do
+    it "Método all?" do
+      expect(@l1.all?).to eq(true)
+    end
+    it "Método any?" do
+      expect(@l1.any?).to eq(true)
+    end
+    it "Método collect" do
+      expect(@l1.map{|i| i*i}).to eq([9, 4, 1, 0])
+      expect(@l1.collect{|i| i*i}).to eq([9, 4, 1, 0])
+    end
+    it "Método count" do
+      expect(@l1.count).to eq(4)
+    end
+    it "Método detect" do
+      expect(@l1.detect {|i| i == 0}).to eq(0)
+      expect(@l1.find {|i| i == 2}).to eq(2)
+      expect(@l1.find {|i| i == 4}).to eq(nil)
+    end
+    it "Método drop" do
+      expect(@l1.drop(2)).to eq([1, 0])
+    end
+    it "Método max" do
+      expect(@l1.max).to eq(3)
+    end
+    it "Método max" do
+      expect(@l1.min).to eq(0)
+    end
+    it "Método sort" do
+      expect(@l1.sort).to eq([0, 1, 2, 3])
+    end
+  end
+  
+end
