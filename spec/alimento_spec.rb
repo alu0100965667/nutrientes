@@ -159,6 +159,9 @@ RSpec.describe Gema do
       expect(@cerdo.between?(@papas, @huevofrito)).to eq(true)
       expect(@papas.between?(@cerdo, @huevofrito)).to eq(false)
     end
+    it "Comparación con otros tipos de objetos" do
+      expect{@papas>1}.to raise_error(ArgumentError)
+    end
   end
   
 end
