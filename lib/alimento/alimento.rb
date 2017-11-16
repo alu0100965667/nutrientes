@@ -1,6 +1,9 @@
 class Gema
+	include Comparable
 	attr_reader :nombre, :proteinas, :glucidos, :lipidos
-	
+	def <=>(other)
+		kcal <=> other.kcal
+	end
 	def initialize(nombre, proteinas, glucidos, lipidos)
 		@nombre = nombre
 		@proteinas = proteinas
