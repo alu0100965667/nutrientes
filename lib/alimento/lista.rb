@@ -1,6 +1,7 @@
 Nodo = Struct.new(:valor, :siguiente, :anterior)
 
 class Lista
+	include Enumerable
 	def initialize(head, tail)
 		@head = head
 		@tail = tail
@@ -38,5 +39,13 @@ class Lista
 		@tail.anterior = nil
 		@tail = aux
 		@tail.siguiente = nil
+	end
+	
+	def each
+		tmp = @head
+		while tmp != nil do
+			yield tmp.valor
+			tmp = tmp.siguiente
+		end
 	end
 end
