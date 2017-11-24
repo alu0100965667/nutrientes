@@ -44,7 +44,7 @@ class Alimento
 	end
 	
 	def ig_ind
-		
+		aibc(@datos[0]).each_with_index.map{ |ind, i| (ind/aibc(@datos[1])[i])*100 }
 	end
 	
 end
