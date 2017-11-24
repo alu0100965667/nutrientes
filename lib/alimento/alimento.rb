@@ -43,6 +43,10 @@ class Alimento
 		g.map{ |gi| gi.each_with_index.map{ |gindex, i| if0(gindex, gi[0], gi[i-1]) if i > 0 } }.map{ |gi| gi.reject{ |gij| gij.class == nil::NilClass } }.map{ |ri| ri.reduce(0, :+) }
 	end
 	
+	def ig_ind
+		
+	end
+	
 end
 
 # Clase que hereda de alimento, extendiéndola, añadiéndole
