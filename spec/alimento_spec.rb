@@ -229,6 +229,9 @@ RSpec.describe Alimento::Alimento do
     it "La clase alimento contiene datos" do
       expect(@chocolate).to respond_to(:datos)
     end
+    it "Existe un método que calcula el aibc" do
+      expect(@chocolate).to respond_to(:aibc)
+    end
     
   end
 end
