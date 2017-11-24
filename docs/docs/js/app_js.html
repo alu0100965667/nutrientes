@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>app.js - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../CODE_OF_CONDUCT_md.html">CODE_OF_CONDUCT</a>
+  
+    <li><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../../LICENSE_txt.html">LICENSE</a>
+  
+    <li><a href="../../README_md.html">README</a>
+  
+    <li><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../alimento_gemspec.html">alimento.gemspec</a>
+  
+    <li><a href="../../bin/setup.html">setup</a>
+  
+    <li><a href="../../docs/Alimento_html.html">Alimento.html</a>
+  
+    <li><a href="../../docs/Alimento/Alimento_html.html">Alimento.html</a>
+  
+    <li><a href="../../docs/Alimento/GrupoAlimentos_html.html">GrupoAlimentos.html</a>
+  
+    <li><a href="../../docs/Alimento/Lista_html.html">Lista.html</a>
+  
+    <li><a href="../../docs/Alimento/Nodo_html.html">Nodo.html</a>
+  
+    <li><a href="../../docs/_index_html.html">_index.html</a>
+  
+    <li><a href="../../docs/class_list_html.html">class_list.html</a>
+  
+    <li><a href="../../docs/css/common_css.html">common.css</a>
+  
+    <li><a href="../../docs/css/full_list_css.html">full_list.css</a>
+  
+    <li><a href="../../docs/css/style_css.html">style.css</a>
+  
+    <li><a href="../../docs/file_README_html.html">file.README.html</a>
+  
+    <li><a href="../../docs/file_list_html.html">file_list.html</a>
+  
+    <li><a href="../../docs/frames_html.html">frames.html</a>
+  
+    <li><a href="../../docs/index_html.html">index.html</a>
+  
+    <li><a href="../../docs/js/app_js.html">app.js</a>
+  
+    <li><a href="../../docs/js/full_list_js.html">full_list.js</a>
+  
+    <li><a href="../../docs/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../../docs/method_list_html.html">method_list.html</a>
+  
+    <li><a href="../../docs/top-level-namespace_html.html">top-level-namespace.html</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page docs/js/app.js">
+
+<p>(function() {</p>
+
+<p>var localStorage = {}, sessionStorage = {}; try { localStorage =
+window.localStorage; } catch (e) { } try { sessionStorage =
+window.sessionStorage; } catch (e) { }</p>
+
+<p>function createSourceLinks() {</p>
+
+<pre>$(&#39;.method_details_list .source_code&#39;).
+    before(&quot;&lt;span class=&#39;showSource&#39;&gt;[&lt;a href=&#39;#&#39; class=&#39;toggleSource&#39;&gt;View source&lt;/a&gt;]&lt;/span&gt;&quot;);
+$(&#39;.toggleSource&#39;).toggle(function() {
+   $(this).parent().nextAll(&#39;.source_code&#39;).slideDown(100);
+   $(this).text(&quot;Hide source&quot;);
+},
+function() {
+    $(this).parent().nextAll(&#39;.source_code&#39;).slideUp(100);
+    $(this).text(&quot;View source&quot;);
+});</pre>
+
+<p>}</p>
+
+<p>function createDefineLinks() {</p>
+
+<pre>var tHeight = 0;
+$(&#39;.defines&#39;).after(&quot; &lt;a href=&#39;#&#39; class=&#39;toggleDefines&#39;&gt;more...&lt;/a&gt;&quot;);
+$(&#39;.toggleDefines&#39;).toggle(function() {
+    tHeight = $(this).parent().prev().height();
+    $(this).prev().css(&#39;display&#39;, &#39;inline&#39;);
+    $(this).parent().prev().height($(this).parent().height());
+    $(this).text(&quot;(less)&quot;);
+},
+function() {
+    $(this).prev().hide();
+    $(this).parent().prev().height(tHeight);
+    $(this).text(&quot;more...&quot;);
+});</pre>
+
+<p>}</p>
+
+<p>function createFullTreeLinks() {</p>
+
+<pre>var tHeight = 0;
+$(&#39;.inheritanceTree&#39;).toggle(function() {
+    tHeight = $(this).parent().prev().height();
+    $(this).parent().toggleClass(&#39;showAll&#39;);
+    $(this).text(&quot;(hide)&quot;);
+    $(this).parent().prev().height($(this).parent().height());
+},
+function() {
+    $(this).parent().toggleClass(&#39;showAll&#39;);
+    $(this).parent().prev().height(tHeight);
+    $(this).text(&quot;show all&quot;);
+});</pre>
+
+<p>}</p>
+
+<p>function searchFrameButtons() {</p>
+
+<pre>$(&#39;.full_list_link&#39;).click(function() {
+  toggleSearchFrame(this, $(this).attr(&#39;href&#39;));
+  return false;
+});
+window.addEventListener(&#39;message&#39;, function(e) {
+  if (e.data === &#39;navEscape&#39;) {
+    $(&#39;#nav&#39;).slideUp(100);
+    $(&#39;#search a&#39;).removeClass(&#39;active inactive&#39;);
+    $(window).focus();
+  }
+});
+
+$(window).resize(function() {
+  if ($(&#39;#search:visible&#39;).length === 0) {
+    $(&#39;#nav&#39;).removeAttr(&#39;style&#39;);
+    $(&#39;#search a&#39;).removeClass(&#39;active inactive&#39;);
+    $(window).focus();
+  }
+});</pre>
+
+<p>}</p>
+
+<p>function toggleSearchFrame(id, link) {</p>
+
+<pre>var frame = $(&#39;#nav&#39;);
+$(&#39;#search a&#39;).removeClass(&#39;active&#39;).addClass(&#39;inactive&#39;);
+if (frame.attr(&#39;src&#39;) === link &amp;&amp; frame.css(&#39;display&#39;) !== &quot;none&quot;) {
+  frame.slideUp(100);
+  $(&#39;#search a&#39;).removeClass(&#39;active inactive&#39;);
+}
+else {
+  $(id).addClass(&#39;active&#39;).removeClass(&#39;inactive&#39;);
+  if (frame.attr(&#39;src&#39;) !== link) frame.attr(&#39;src&#39;, link);
+  frame.slideDown(100);
+}</pre>
+
+<p>}</p>
+
+<p>function linkSummaries() {</p>
+
+<pre>$(&#39;.summary_signature&#39;).click(function() {
+  document.location = $(this).find(&#39;a&#39;).attr(&#39;href&#39;);
+});</pre>
+
+<p>}</p>
+
+<p>function summaryToggle() {</p>
+
+<pre>$(&#39;.summary_toggle&#39;).click(function(e) {
+  e.preventDefault();
+  localStorage.summaryCollapsed = $(this).text();
+  $(&#39;.summary_toggle&#39;).each(function() {
+    $(this).text($(this).text() == &quot;collapse&quot; ? &quot;expand&quot; : &quot;collapse&quot;);
+    var next = $(this).parent().parent().nextAll(&#39;ul.summary&#39;).first();
+    if (next.hasClass(&#39;compact&#39;)) {
+      next.toggle();
+      next.nextAll(&#39;ul.summary&#39;).first().toggle();
+    }
+    else if (next.hasClass(&#39;summary&#39;)) {
+      var list = $(&#39;&lt;ul class=&quot;summary compact&quot; /&gt;&#39;);
+      list.html(next.html());
+      list.find(&#39;.summary_desc, .note&#39;).remove();
+      list.find(&#39;a&#39;).each(function() {
+        $(this).html($(this).find(&#39;strong&#39;).html());
+        $(this).parent().html($(this)[0].outerHTML);
+      });
+      next.before(list);
+      next.toggle();
+    }
+  });
+  return false;
+});
+if (localStorage.summaryCollapsed == &quot;collapse&quot;) {
+  $(&#39;.summary_toggle&#39;).first().click();
+} else { localStorage.summaryCollapsed = &quot;expand&quot;; }</pre>
+
+<p>}</p>
+
+<p>function generateTOC() {</p>
+
+<pre>if ($(&#39;#filecontents&#39;).length === 0) return;
+var _toc = $(&#39;&lt;ol class=&quot;top&quot;&gt;&lt;/ol&gt;&#39;);
+var show = false;
+var toc = _toc;
+var counter = 0;
+var tags = [&#39;h2&#39;, &#39;h3&#39;, &#39;h4&#39;, &#39;h5&#39;, &#39;h6&#39;];
+var i;
+if ($(&#39;#filecontents h1&#39;).length &gt; 1) tags.unshift(&#39;h1&#39;);
+for (i = 0; i &lt; tags.length; i++) { tags[i] = &#39;#filecontents &#39; + tags[i]; }
+var lastTag = parseInt(tags[0][1], 10);
+$(tags.join(&#39;, &#39;)).each(function() {
+  if ($(this).parents(&#39;.method_details .docstring&#39;).length != 0) return;
+  if (this.id == &quot;filecontents&quot;) return;
+  show = true;
+  var thisTag = parseInt(this.tagName[1], 10);
+  if (this.id.length === 0) {
+    var proposedId = $(this).attr(&#39;toc-id&#39;);
+    if (typeof(proposedId) != &quot;undefined&quot;) this.id = proposedId;
+    else {
+      var proposedId = $(this).text().replace(/[^a-z0-9-]/ig, &#39;_&#39;);
+      if ($(&#39;#&#39; + proposedId).length &gt; 0) { proposedId += counter; counter++; }
+      this.id = proposedId;
+    }
+  }
+  if (thisTag &gt; lastTag) {
+    for (i = 0; i &lt; thisTag - lastTag; i++) {
+      var tmp = $(&#39;&lt;ol/&gt;&#39;); toc.append(tmp); toc = tmp;
+    }
+  }
+  if (thisTag &lt; lastTag) {
+    for (i = 0; i &lt; lastTag - thisTag; i++) toc = toc.parent();
+  }
+  var title = $(this).attr(&#39;toc-title&#39;);
+  if (typeof(title) == &quot;undefined&quot;) title = $(this).text();
+  toc.append(&#39;&lt;li&gt;&lt;a href=&quot;#&#39; + this.id + &#39;&quot;&gt;&#39; + title + &#39;&lt;/a&gt;&lt;/li&gt;&#39;);
+  lastTag = thisTag;
+});
+if (!show) return;
+html = &#39;&lt;div id=&quot;toc&quot;&gt;&lt;p class=&quot;title hide_toc&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;strong&gt;Table of Contents&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&#39;;
+$(&#39;#content&#39;).prepend(html);
+$(&#39;#toc&#39;).append(_toc);
+$(&#39;#toc .hide_toc&#39;).toggle(function() {
+  $(&#39;#toc .top&#39;).slideUp(&#39;fast&#39;);
+  $(&#39;#toc&#39;).toggleClass(&#39;hidden&#39;);
+  $(&#39;#toc .title small&#39;).toggle();
+}, function() {
+  $(&#39;#toc .top&#39;).slideDown(&#39;fast&#39;);
+  $(&#39;#toc&#39;).toggleClass(&#39;hidden&#39;);
+  $(&#39;#toc .title small&#39;).toggle();
+});</pre>
+
+<p>}</p>
+
+<p>function navResizeFn(e) {</p>
+
+<pre>if (e.which !== 1) {
+  navResizeFnStop();
+  return;
+}
+
+sessionStorage.navWidth = e.pageX.toString();
+$(&#39;.nav_wrap&#39;).css(&#39;width&#39;, e.pageX);
+$(&#39;.nav_wrap&#39;).css(&#39;-ms-flex&#39;, &#39;inherit&#39;);</pre>
+
+<p>}</p>
+
+<p>function navResizeFnStop() {</p>
+
+<pre>$(window).unbind(&#39;mousemove&#39;, navResizeFn);
+window.removeEventListener(&#39;message&#39;, navMessageFn, false);</pre>
+
+<p>}</p>
+
+<p>function navMessageFn(e) {</p>
+
+<pre>if (e.data.action === &#39;mousemove&#39;) navResizeFn(e.data.event);
+if (e.data.action === &#39;mouseup&#39;) navResizeFnStop();</pre>
+
+<p>}</p>
+
+<p>function navResizer() {</p>
+
+<pre>$(&#39;#resizer&#39;).mousedown(function(e) {
+  e.preventDefault();
+  $(window).mousemove(navResizeFn);
+  window.addEventListener(&#39;message&#39;, navMessageFn, false);
+});
+$(window).mouseup(navResizeFnStop);
+
+if (sessionStorage.navWidth) {
+  navResizeFn({which: 1, pageX: parseInt(sessionStorage.navWidth, 10)});
+}</pre>
+
+<p>}</p>
+
+<p>function navExpander() {</p>
+
+<pre>var done = false, timer = setTimeout(postMessage, 500);
+function postMessage() {
+  if (done) return;
+  clearTimeout(timer);
+  var opts = { action: &#39;expand&#39;, path: pathId };
+  document.getElementById(&#39;nav&#39;).contentWindow.postMessage(opts, &#39;*&#39;);
+  done = true;
+}
+
+window.addEventListener(&#39;message&#39;, function(event) {
+  if (event.data === &#39;navReady&#39;) postMessage();
+  return false;
+}, false);</pre>
+
+<p>}</p>
+
+<p>function mainFocus() {</p>
+
+<pre>var hash = window.location.hash;
+if (hash !== &#39;&#39; &amp;&amp; $(hash)[0]) {
+  $(hash)[0].scrollIntoView();
+}
+
+setTimeout(function() { $(&#39;#main&#39;).focus(); }, 10);</pre>
+
+<p>}</p>
+
+<p>$(document).ready(function() {</p>
+
+<pre class="ruby"><span class="ruby-identifier">navResizer</span>();
+<span class="ruby-identifier">navExpander</span>();
+<span class="ruby-identifier">createSourceLinks</span>();
+<span class="ruby-identifier">createDefineLinks</span>();
+<span class="ruby-identifier">createFullTreeLinks</span>();
+<span class="ruby-identifier">searchFrameButtons</span>();
+<span class="ruby-identifier">linkSummaries</span>();
+<span class="ruby-identifier">summaryToggle</span>();
+<span class="ruby-identifier">generateTOC</span>();
+<span class="ruby-identifier">mainFocus</span>();
+</pre>
+
+<p>});</p>
+
+<p>})();</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
