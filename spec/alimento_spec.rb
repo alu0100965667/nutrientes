@@ -241,5 +241,8 @@ RSpec.describe Alimento::Alimento do
     it "Se calcula el ig de los individuos" do
       expect(@chocolate.ig_ind).to eq([7.226562500000004, 22.83163265306124])
     end
+    it "Existe un método que calcula el ig" do
+      expect(@chocolate).to respond_to(:ig)
+    end
   end
 end
