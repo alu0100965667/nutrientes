@@ -3,7 +3,7 @@ require "spec_helper"
 RSpec.describe Alimento::Alimento do
   
   before :all do
-    @papas = Alimento::Alimento.new("Papas", 2.0, 15.4, 0.1)
+    @papas = Alimento::Alimento.new("Papas", 2.0, 15.4, 0.1, nil)
   end
   
   describe "# almacenamiento de variables" do
@@ -90,7 +90,7 @@ end
 
 RSpec.describe Alimento::GrupoAlimentos do
   before :all do
-    @cerdo = Alimento::GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, "Carnes")
+    @cerdo = Alimento::GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, nil, "Carnes")
   end
   
   describe "# Clase, Tipo de objeto y Jerarquia" do
@@ -133,10 +133,10 @@ end
 RSpec.describe Alimento::Alimento do
   
   before :all do
-    @papas = Alimento::Alimento.new("Papas", 2.0, 15.4, 0.1)
-    @papasgrupo = Alimento::GrupoAlimentos.new("Papas", 2.0, 15.4, 0.1, "Hidratos")
-    @cerdo = Alimento::GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, "Carnes")
-    @huevofrito = Alimento::Alimento.new("Huevo frito", 14.1, 0.0, 19.5)
+    @papas = Alimento::Alimento.new("Papas", 2.0, 15.4, 0.1, nil)
+    @papasgrupo = Alimento::GrupoAlimentos.new("Papas", 2.0, 15.4, 0.1, nil, "Hidratos")
+    @cerdo = Alimento::GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, nil, "Carnes")
+    @huevofrito = Alimento::Alimento.new("Huevo frito", 14.1, 0.0, 19.5, nil)
   end
   
   describe "# Módulo Comparable en Gema" do
@@ -207,4 +207,28 @@ RSpec.describe Alimento::Lista do
     end
   end
   
+end
+
+RSpec.describe Alimento::Alimento do
+  before :all do
+    @choco1 = [6.5,6.5,6.7,6.5,6.5,6.8,6.7,6.2,6.5,7.2,6.9,7.0,6.3,6.2,6.1,5.9,5.8,6.1,6.7,6.7,6.6,6.7,6.9,7.2,7.1]   # datos de chocolate ind 1
+    @gluco1 = [4.9,5.3,5.9,6.7,7.2,7.6,8.0,8.2,8.2,8.4,8.3,8.3,8.0,7.5,7.1,6.8,6.8,6.9,6.8,6.3,6.2,6.3,6.2,6.3,6.1]   # datos de glucosa ind 1
+    @choco2 = [4.6,4.6,4.7,4.7,4.8,4.7,4.8,4.8,4.6,4.4,4.7,4.7,4.8,4.7,5.2,5.9,5.9,5.7,5.4,5.3,5.1,4.8,4.8,4.9,5.9]   # datos de chocolate ind 2
+    @gluco2 = [6.3,5.4,5.6,5.7,6.5,7.4,7.9,7.4,7.7,7.9,7.9,7.8,7.8,7.8,8.0,8.5,9.4,10.8,10.5,9.1,8.9,8.3,7.7,7.6,7.5] # datos de glucosa ind 2
+    
+    @datos_choco = [@choco1,@choco2]
+    @datos_gluco = [@gluco1,@gluco2]
+    
+    @datos = [@datos_choco,@datos_gluco]
+    
+    @chocolate = Alimento::Alimento.new("Chocolate", 5.3, 47.0, 30.0, @datos)
+  end
+  
+  describe "# Cálculo IG" do
+    
+    it "La clase alimento contiene datos" do
+      expect(@chocolate).to respond_to(:datos)
+    end
+    
+  end
 end
