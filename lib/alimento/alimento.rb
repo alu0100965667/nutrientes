@@ -48,7 +48,7 @@ class Alimento
 	end
 	
 	def ig
-		
+		ig_ind.reduce(0, :+)/ig_ind.size
 	end
 	
 end
