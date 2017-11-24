@@ -47,6 +47,10 @@ class Alimento
 		aibc(@datos[0]).each_with_index.map{ |ind, i| (ind/aibc(@datos[1])[i])*100 }
 	end
 	
+	def ig
+		
+	end
+	
 end
 
 # Clase que hereda de alimento, extendiéndola, añadiéndole
