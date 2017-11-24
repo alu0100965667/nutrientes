@@ -4,7 +4,7 @@ module Alimento
 # Se ha incluido el mixin Comparable
 class Alimento
 	include Comparable
-	attr_reader :nombre, :proteinas, :glucidos, :lipidos
+	attr_reader :nombre, :proteinas, :glucidos, :lipidos, :datos
 	
 	# Pa incluir el mixin Comparable se utiliza el valor energético
 	def <=>(other)
@@ -14,11 +14,12 @@ class Alimento
 	end
 	
 	# Se asignan todas las variables de la clase
-	def initialize(nombre, proteinas, glucidos, lipidos)
+	def initialize(nombre, proteinas, glucidos, lipidos, datos)
 		@nombre = nombre
 		@proteinas = proteinas
 		@glucidos = glucidos
 		@lipidos = lipidos
+		@datos = datos
 	end
 	
 	# Devuelve el alimento formateado
@@ -39,8 +40,8 @@ class GrupoAlimentos < Alimento
 	attr_reader :grupo
 	
 	# Se llama al contructor de la clase madre y se asigna el valor de la nueva variable
-	def initialize(nombre, proteinas, glucidos, lipidos, grupo)
-		super(nombre, proteinas, glucidos, lipidos)
+	def initialize(nombre, proteinas, glucidos, lipidos, datos, grupo)
+		super(nombre, proteinas, glucidos, lipidos, datos)
 		@grupo = grupo
 	end
 	
