@@ -232,6 +232,9 @@ RSpec.describe Alimento::Alimento do
     it "Existe un método que calcula el aibc" do
       expect(@chocolate).to respond_to(:aibc)
     end
+    it "Se calcula el aibc" do
+      expect(@chocolate.aibc(@datos_choco)).to eq([18.500000000000007, 44.75000000000004])
+    end
     
   end
 end
