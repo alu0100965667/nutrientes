@@ -41,3 +41,5 @@ The gem is available as open source under the terms of the [MIT License](http://
 ## Code of Conduct
 
 Everyone interacting in the Alimento project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/alimento/blob/master/CODE_OF_CONDUCT.md).
+
+{<img src="https://coveralls.io/repos/github/alu0100965667/nutrientes/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/alu0100965667/nutrientes?branch=master]
