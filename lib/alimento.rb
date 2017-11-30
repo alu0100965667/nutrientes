@@ -1,5 +1,6 @@
 require "alimento/alimento"
 require "alimento/lista"
+require "alimento/enumerable"
 
 
 # encoding: utf-8
