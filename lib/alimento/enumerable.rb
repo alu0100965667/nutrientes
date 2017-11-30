@@ -12,4 +12,8 @@ module Enumerable
 		doble
 	end
 	
+	def sort_each
+		
+	end
+	
 end
