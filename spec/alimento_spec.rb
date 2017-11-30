@@ -292,6 +292,9 @@ RSpec.describe Alimento::GrupoAlimentos do
     it "Ordenando con for" do
       expect(@alimentos.sort_for.to_s).to eq("[Tomate, Calabaza, Cebolla, Manzana, Pera, Leche, Yogurt, Papas, Bacalao, Plátano, Ternera, Pollo, Cerdo, Salmón, Atún, Huevo Frito, Lentejas, Arroz, Azúcar, Chocolate, Mantequilla, Aceite de oliva]")
     end
+    it "Existe una función que ordene con each" do
+      expect(@alimentos).to respond_to(:sort_each)
+    end
   end
   
 end
