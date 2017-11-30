@@ -1,4 +1,8 @@
 require "spec_helper"
+require 'benchmark'
+
+include Benchmark
+
 
 RSpec.describe Alimento::Alimento do
   
@@ -303,6 +307,14 @@ RSpec.describe Alimento::GrupoAlimentos do
     end
     it "Ordenando con sort" do
       expect(@alimentos.sort.to_s).to eq("[Tomate, Calabaza, Cebolla, Manzana, Pera, Leche, Yogurt, Papas, Bacalao, Plátano, Ternera, Pollo, Cerdo, Salmón, Atún, Huevo Frito, Lentejas, Arroz, Azúcar, Chocolate, Mantequilla, Aceite de oliva]")
+    end
+    it "Benchmark" do
+      puts "\n"
+      Benchmark.bm(7) do |x|
+        x.report("sort_for ")  {@alimentos.sort_for}
+        x.report("sort_each") {@alimentos.sort_each}
+        x.report("sort     ")      {@alimentos.sort}
+      end
     end
   end
   
