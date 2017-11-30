@@ -23,7 +23,7 @@ RSpec.describe Alimento::Alimento do
   
   describe "# objeto formateado" do
     it "to_s funciona correctamente" do
-      expect(@papas.to_s).to eq("Alimento: Papas\n\tProteinas: 2.0\n\tGlucidos: 15.4\n\tLipidos: 0.1")
+      expect(@papas.to_s).to eq("Papas")
     end
   end
   
@@ -122,7 +122,7 @@ RSpec.describe Alimento::GrupoAlimentos do
   
   describe "# Métodos" do
     it "to_s funciona correctamente" do
-      expect(@cerdo.to_s).to eq("Grupo: Carnes\nAlimento: Cerdo\n\tProteinas: 21.5\n\tGlucidos: 0.0\n\tLipidos: 6.3")
+      expect(@cerdo.to_s).to eq("Cerdo")
     end
     it "Se obtiene el valor energetico correctamente" do
       expect(@cerdo.kcal).to eq(142.7)

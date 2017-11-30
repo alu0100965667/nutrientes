@@ -24,7 +24,11 @@ class Alimento
 	
 	# Devuelve el alimento formateado
 	def to_s
-		"Alimento: #{nombre}\n\tProteinas: #{proteinas}\n\tGlucidos: #{glucidos}\n\tLipidos: #{lipidos}"
+		"#{nombre}"
+	end
+	
+	def inspect
+		self.to_s
 	end
 	
 	# Devuelve el valor energético del alimento según sus nutrientes
@@ -69,12 +73,6 @@ class GrupoAlimentos < Alimento
 		@grupo = grupo
 	end
 	
-	# Devuelve el Alimento formateado añadiéndole el nombre del grupo
-	def to_s
-		s = "Grupo: #{grupo}\n"
-		s << super.to_s
-		s
-	end
 end
 
 end
