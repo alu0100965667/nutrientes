@@ -249,3 +249,46 @@ RSpec.describe Alimento::Alimento do
     end
   end
 end
+
+
+RSpec.describe Alimento::GrupoAlimentos do
+  before :all do
+    @alimentos = []
+    
+    @alimentos << Alimento::GrupoAlimentos.new("Huevo Frito", 14.1, 0.0, 19.5, [], "Lácteos")
+    @alimentos << Alimento::GrupoAlimentos.new("Leche", 3.3, 4.8, 3.2, [], "Lácteos")
+    @alimentos << Alimento::GrupoAlimentos.new("Yogurt", 3.8, 4.9, 3.8, [], "Lácteos")
+    
+    @alimentos << Alimento::GrupoAlimentos.new("Cerdo", 21.5, 0.0, 6.3, [], "Carnes")
+    @alimentos << Alimento::GrupoAlimentos.new("Ternera", 21.1, 0.0, 3.1, [], "Carnes")
+    @alimentos << Alimento::GrupoAlimentos.new("Pollo", 20.6, 0.0, 5.6, [], "Carnes")
+    
+    @alimentos << Alimento::GrupoAlimentos.new("Bacalao", 17.7, 0.0, 0.4, [], "Pescados")
+    @alimentos << Alimento::GrupoAlimentos.new("Atún", 21.5, 0.0, 15.5, [], "Pescados")
+    @alimentos << Alimento::GrupoAlimentos.new("Salmón", 19.9, 0.0, 13.6, [], "Pescados")
+    
+    @alimentos << Alimento::GrupoAlimentos.new("Aceite de oliva", 0.0, 0.2, 99.6, [], "Alimentos Grasos")
+    @alimentos << Alimento::GrupoAlimentos.new("Mantequilla", 0.7, 0.0, 83.2, [], "Alimentos Grasos")
+    @alimentos << Alimento::GrupoAlimentos.new("Chocolate", 5.3, 47.0, 30.0, [], "Alimentos Grasos")
+    
+    @alimentos << Alimento::GrupoAlimentos.new("Azúcar", 0.0, 99.8, 0.0, [], "Alimentos Carbohidratos")
+    @alimentos << Alimento::GrupoAlimentos.new("Arroz", 6.8, 77.7, 0.6, [], "Alimentos Carbohidratos")
+    @alimentos << Alimento::GrupoAlimentos.new("Lentejas", 23.5, 52.0, 1.4, [], "Alimentos Carbohidratos")
+    @alimentos << Alimento::GrupoAlimentos.new("Papas", 2.0, 15.4, 0.1, [], "Alimentos Carbohidratos")
+    
+    @alimentos << Alimento::GrupoAlimentos.new("Tomate", 1.0, 3.5, 0.2, [], "Verduras")
+    @alimentos << Alimento::GrupoAlimentos.new("Cebolla", 1.3, 5.8, 0.3, [], "Verduras")
+    @alimentos << Alimento::GrupoAlimentos.new("Calabaza", 1.1, 4.8, 0.1, [], "Verduras")
+    
+    @alimentos << Alimento::GrupoAlimentos.new("Manzana", 0.3, 12.4, 0.4, [], "Frutas")
+    @alimentos << Alimento::GrupoAlimentos.new("Plátano", 1.2, 21.4, 0.2, [], "Frutas")
+    @alimentos << Alimento::GrupoAlimentos.new("Pera", 0.5, 12.7, 0.3, [], "Frutas")
+  end
+  
+  describe "# Ordenación" do
+    it "Existe una función que ordene con for" do
+      expect(@alimentos).to respond_to(:sort_for)
+    end
+  end
+  
+end
